@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EuroVisor 2026 — Guía y simulador de Eurovisión</title>
+  <meta name="description" content="EuroVisor 2026: guía para ver la final de Eurovisión, lista de participantes, simulador de votación y ranking. ¿Dónde ver la gala desde España? ¡Crea tu top 10 y compártelo!">
+  <meta name="keywords" content="Eurovisión 2026, ver Eurovisión, dónde ver Eurovisión, simulador votación, TVE boicot, participantes Eurovisión, ranking, Eurovisión Viena 2026">
+  <link rel="canonical" href="https://eurovisor.es">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="EuroVisor 2026 — Simulador de votación">
+  <meta property="og:description" content="Crea tu Top 10 de Eurovisión 2026, asigna puntos y comparte tu ranking. ¿Dónde ver la gala desde España?">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eurovisor.es">
+  <meta property="og:image" content="https://eurovisor.es/og-image.png">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EuroVisor 2026 — Simulador de votación">
+  <meta name="twitter:description" content="Crea tu Top 10 de Eurovisión 2026, asigna puntos y comparte tu ranking.">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "EuroVisor 2026",
+    "description": "Guía y simulador de votación de Eurovisión 2026",
+    "url": "https://eurovisor.es"
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="src/css/style.css">
+  <script src="src/js/app.js" defer></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <header class="site-header border-b border-white/10 bg-slate-950/95">
+    <div class="mx-auto flex max-w-6xl flex-col gap-5 px-4 py-6 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wide text-cyan-300">EuroVision companion</p>
+          <h1 class="mt-1 text-4xl font-black text-white sm:text-5xl">EuroVisor 2026</h1>
+          <p class="mt-2 max-w-2xl text-base text-slate-300">Tu guía y simulador de Eurovisión.</p>
+        </div>
+        <p id="status-badge" class="inline-flex w-fit items-center rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100">
+          Preparando la gala
+        </p>
+      </div>
+
+      <nav class="nav-tabs" aria-label="Navegacion principal" role="tablist">
+        <button class="nav-tab active" type="button" data-target="guia" role="tab" aria-selected="true">📺 Guía</button>
+        <button class="nav-tab" type="button" data-target="participantes" role="tab" aria-selected="false">🎤 Participantes</button>
+        <button class="nav-tab" type="button" data-target="votacion" role="tab" aria-selected="false">🗳️ Votar</button>
+        <button class="nav-tab" type="button" data-target="ranking" role="tab" aria-selected="false">🏆 Mi Ranking</button>
+        <button class="nav-tab" type="button" data-target="favoritos" role="tab" aria-selected="false">📊 Favoritos</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+    <!-- GUIA -->
+    <section id="guia" class="section active" aria-labelledby="guia-title">
+      <h2 id="guia-title" class="text-2xl font-bold">¿Dónde ver la final?</h2>
+      <p class="mt-3 text-slate-300 max-w-3xl">
+        Guía rápida para seguir Eurovisión 2026 desde España. RTVE no emite la gala por la retirada de España en protesta por la participación de Israel.
+      </p>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <details class="rounded-lg border border-white/10 bg-slate-900/60 p-4">
+          <summary class="cursor-pointer font-semibold text-cyan-300">¿Por qué TVE no emite Eurovisión 2026?</summary>
+          <p class="mt-2 text-slate-300 text-sm">España se retiró de la edición 2026 en señal de protesta por la participación de Israel. RTVE no retransmite la gala. Sin embargo, hay otras formas de seguirla.</p>
+        </details>
+        <details class="rounded-lg border border-white/10 bg-slate-900/60 p-4">
+          <summary class="cursor-pointer font-semibold text-cyan-300">¿Dónde puedo ver la final en directo?</summary>
+          <ul class="mt-2 text-slate-300 text-sm list-disc pl-5 space-y-1">
+            <li><strong>YouTube</strong>: stream oficial de la UER (Eurovision Song Contest) — suele estar disponible globalmente.</li>
+            <li><strong>RTP (Portugal)</strong>: <a href="https://www.rtp.pt" target="_blank" rel="noopener" class="underline text-cyan-300">rtp.pt</a></li>
+            <li><strong>BBC (Reino Unido)</strong>: <a href="https://www.bbc.co.uk/iplayer" target="_blank" rel="noopener" class="underline text-cyan-300">BBC iPlayer</a></li>
+            <li><strong>SVT (Suecia)</strong>: <a href="https://www.svtplay.se" target="_blank" rel="noopener" class="underline text-cyan-300">SVT Play</a></li>
+            <li><strong>ORF (Austria)</strong>: <a href="https://tvthek.orf.at" target="_blank" rel="noopener" class="underline text-cyan-300">ORF TVthek</a></li>
+            <li><strong>NOS (Países Bajos)</strong>: aunque no participan, a veces retransmiten.</li>
+          </ul>
+        </details>
+        <details class="rounded-lg border border-white/10 bg-slate-900/60 p-4">
+          <summary class="cursor-pointer font-semibold text-cyan-300">¿Puedo verla desde mi móvil?</summary>
+          <p class="mt-2 text-slate-300 text-sm">Sí. El stream oficial de YouTube funciona en cualquier dispositivo. Algunas emisoras internacionales pueden tener restricciones geográficas — en ese caso una VPN puede ayudar.</p>
+        </details>
+        <details class="rounded-lg border border-white/10 bg-slate-900/60 p-4">
+          <summary class="cursor-pointer font-semibold text-cyan-300">¿Qué necesito para verla desde el extranjero?</summary>
+          <p class="mt-2 text-slate-300 text-sm">Si estás fuera de España o tu emisora está bloqueada, prueba una VPN para acceder a los streams oficiales sin restricciones geográficas.</p>
+        </details>
+      </div>
+
+      <div id="vpn-cta" class="mt-6 rounded-xl border border-cyan-300/20 bg-cyan-950/30 p-5">
+        <h3 class="text-lg font-bold text-cyan-300">🔒 ¿Necesitas una VPN para ver la gala?</h3>
+        <p class="mt-2 text-slate-300 text-sm">Muchas emisoras internacionales tienen bloqueo geográfico. Si no puedes acceder al stream, prueba una de estas opciones:</p>
+        <div class="mt-3 flex flex-wrap gap-3">
+          <a href="https://nordvpn.com/CAMBIA_POR_TU_ENLACE" rel="nofollow sponsored" target="_blank" class="inline-flex items-center rounded-lg bg-cyan-600 px-4 py-2 text-sm font-semibold text-white hover:bg-cyan-500">NordVPN</a>
+          <a href="https://expressvpn.com/CAMBIA_POR_TU_ENLACE" rel="nofollow sponsored" target="_blank" class="inline-flex items-center rounded-lg bg-cyan-600 px-4 py-2 text-sm font-semibold text-white hover:bg-cyan-500">ExpressVPN</a>
+          <a href="https://surfshark.com/CAMBIA_POR_TU_ENLACE" rel="nofollow sponsored" target="_blank" class="inline-flex items-center rounded-lg bg-cyan-600 px-4 py-2 text-sm font-semibold text-white hover:bg-cyan-500">Surfshark</a>
+        </div>
+      </div>
+
+      <p class="mt-6 text-xs text-slate-500">Web no oficial. La información se actualiza en tiempo real y puede contener errores.</p>
+    </section>
+
+    <!-- PARTICIPANTES -->
+    <section id="participantes" class="section" aria-labelledby="participantes-title">
+      <h2 id="participantes-title" class="text-2xl font-bold">Participantes</h2>
+      <p class="mt-3 text-slate-300">Los 25 países de la final de Eurovisión 2026 en Viena.</p>
+      <div id="participantes-grid" class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <p class="col-span-full text-slate-400">Cargando participantes…</p>
+      </div>
+    </section>
+
+    <!-- VOTACION -->
+    <section id="votacion" class="section" aria-labelledby="votacion-title">
+      <h2 id="votacion-title" class="text-2xl font-bold">Simulador de votación</h2>
+      <p class="mt-3 text-slate-300">Selecciona tu top 10 de países y asigna los puntos estilo Eurovisión (12, 10, 8, 7, 6, 5, 4, 3, 2, 1).</p>
+
+      <div class="mt-6 flex flex-col gap-6 lg:flex-row">
+        <div class="flex-1">
+          <div id="votacion-grid" class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            <p class="col-span-full text-slate-400">Cargando…</p>
+          </div>
+        </div>
+        <div class="w-full lg:w-80 shrink-0">
+          <div class="sticky top-24 rounded-xl border border-white/10 bg-slate-900/70 p-4">
+            <h3 class="font-bold text-cyan-300">Tu Top 10</h3>
+            <p id="contador-votos" class="mt-1 text-sm text-slate-400">0/10 países seleccionados</p>
+            <ol id="top10-slots" class="mt-3 space-y-2">
+              <!-- slots generados por JS -->
+            </ol>
+            <button id="btn-ver-ranking" class="mt-4 w-full rounded-lg bg-cyan-600 px-4 py-2 font-semibold text-white opacity-50 cursor-not-allowed" disabled>Ver mi ranking</button>
+            <p id="errores-votacion" class="mt-2 text-sm text-red-400 hidden"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANKING -->
+    <section id="ranking" class="section" aria-labelledby="ranking-title">
+      <h2 id="ranking-title" class="text-2xl font-bold">Mi ranking</h2>
+      <div id="ranking-content" class="mt-6">
+        <p class="text-slate-300">Primero tienes que votar. <button type="button" class="underline text-cyan-300" onclick="EuroVisor.showSection('votacion')">Ir a votar →</button></p>
+      </div>
+    </section>
+
+    <!-- FAVORITOS -->
+    <section id="favoritos" class="section" aria-labelledby="favoritos-title">
+      <h2 id="favoritos-title" class="text-2xl font-bold">Favoritos y cuotas</h2>
+      <p class="mt-3 text-slate-300">Top 10 de favoritos según casas de apuestas (cuotas orientativas).</p>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="border-b border-white/10 text-slate-400">
+              <th class="py-2 pr-4">Pos</th>
+              <th class="py-2 pr-4">País</th>
+              <th class="py-2 pr-4">Artista</th>
+              <th class="py-2 pr-4">Cuota</th>
+              <th class="py-2">Prob. implícita</th>
+            </tr>
+          </thead>
+          <tbody id="favoritos-body">
+            <tr><td colspan="5" class="py-4 text-slate-400">Cargando…</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs text-slate-500 italic">Las cuotas son orientativas y provienen de casas de apuestas. No garantizan el resultado real de la gala.</p>
+    </section>
+
+    <!-- COMPARTIR -->
+    <section id="compartir" class="section" aria-labelledby="compartir-title">
+      <h2 id="compartir-title" class="text-2xl font-bold">Compartir en redes</h2>
+      <div id="compartir-content" class="mt-6 max-w-2xl">
+        <p class="text-slate-300">Aún no has creado tu ranking. Vota primero para generar un resumen compartible.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="border-t border-white/10 px-4 py-8 text-center text-sm text-slate-400">
+    <p>Web no oficial. Datos recopilados de fuentes públicas.</p>
+
+    <!-- AD PLACEHOLDER: Sustituir por código AdSense real -->
+    <div class="mx-auto mt-4 max-w-3xl ad-slot" style="min-height:90px; background:#0f172a; display:flex; align-items:center; justify-content:center; border:1px dashed #334155; border-radius:8px;">
+      <!-- AdSense display code - replace with your publisher ID -->
+      <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins> -->
+      <p class="text-slate-500 text-sm">🛑 Espacio publicitario — Activar AdSense</p>
+    </div>
+  </footer>
+</body>
+</html>
