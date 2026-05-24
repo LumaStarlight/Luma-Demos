@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoCalc — Calculadora Autónomos 2026</title>
+    <meta
+      name="description"
+      content="Calcula una estimación orientativa de IRPF, IVA y cuota de autónomos para 2026."
+    >
+    <meta name="keywords" content="autónomos, IRPF 2026, cuota autónomos, calculadora impuestos España">
+    <meta name="author" content="AutoCalc">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="AutoCalc — Calculadora de Impuestos para Autónomos 2026">
+    <meta
+      property="og:description"
+      content="Calcula tu IRPF, cuota de autónomos, IVA y punto de equilibrio al instante. Gratis."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://autocalc.dev">
+    <meta property="og:image" content="assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AutoCalc — Calculadora de Impuestos para Autónomos 2026">
+    <meta
+      name="twitter:description"
+      content="Calcula tu IRPF, cuota de autónomos, IVA y punto de equilibrio al instante. Gratis."
+    >
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Analytics: Plausible (ligero y respetuoso con privacidad).
+         REEMPLAZAR data-domain por tu dominio real.
+         Alternativa GA4: comenta esta linea y descomenta el snippet de GA4 mas abajo. -->
+    <script defer data-domain="autocalc.dev" src="https://plausible.io/js/script.js"></script>
+    <!-- GA4 alternativo (REEMPLAZAR G-XXXXXXXXXX por tu ID real):
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AutoCalc",
+        "description": "Calculadora orientativa de IRPF, cuota de autónomos, IVA y punto de equilibrio para autónomos en España.",
+        "url": "https://autocalc.dev",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "4.99",
+          "priceCurrency": "EUR"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__content">
+        <p class="eyebrow">Autónomos España 2026</p>
+        <h1>AutoCalc</h1>
+        <p class="lead">
+          Calcula una estimación rápida de impuestos, cuota de autónomos y
+          facturación mínima con tus ingresos y gastos previstos.
+        </p>
+      </div>
+    </header>
+
+    <main id="app" class="app-shell">
+      <section class="intro" aria-labelledby="intro-title">
+        <h2 id="intro-title">Calculadora fiscal orientativa</h2>
+        <p>
+          Introduce tus datos cuando el formulario esté disponible para ver el
+          resultado anual estimado y preparar un informe descargable.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <section class="footer-legal" aria-label="Aviso legal">
+        <p>
+          Esta calculadora ofrece estimaciones orientativas basadas en los
+          parámetros fiscales vigentes. No constituye asesoramiento fiscal
+          profesional. Consulta con un asesor fiscal para una evaluación
+          personalizada de tu situación.
+        </p>
+        <p class="footer-legal__privacy">
+          Todos los cálculos se realizan en tu navegador. No almacenamos ni
+          transmitimos tus datos a ningún servidor.
+        </p>
+        <p class="footer-legal__contact">
+          Contacto:
+          <a href="mailto:hola@autocalc.dev">hola@autocalc.dev</a>
+          &mdash; &copy; <span id="current-year">2026</span> AutoCalc
+        </p>
+      </section>
+
+      <section class="affiliate-tools" aria-labelledby="affiliate-title">
+        <div class="affiliate-tools__header">
+          <p class="eyebrow">Recursos para ahorrar tiempo</p>
+          <h2 id="affiliate-title">Herramientas recomendadas para autónomos</h2>
+        </div>
+
+        <div class="affiliate-grid">
+          <!-- REEMPLAZAR: por tu enlace de afiliado de Holded. -->
+          <a
+            class="affiliate-card"
+            href="https://www.holded.com/es?utm_source=autocalc&utm_medium=affiliate&utm_campaign=footer"
+            target="_blank"
+            rel="nofollow sponsored noopener noreferrer"
+            title="Abrir Holded para facturación y gestión de autónomos"
+          >
+            <span class="affiliate-card__icon" aria-hidden="true">H</span>
+            <span class="affiliate-card__body">
+              <strong>Holded</strong>
+              <span>Facturación, CRM y contabilidad básica para centralizar tu actividad.</span>
+            </span>
+            <span class="affiliate-badge">Afiliado</span>
+          </a>
+
+          <!-- REEMPLAZAR: por tu enlace de afiliado de Quaderno. -->
+          <a
+            class="affiliate-card"
+            href="https://www.quaderno.io/es?utm_source=autocalc&utm_medium=affiliate&utm_campaign=footer"
+            target="_blank"
+            rel="nofollow sponsored noopener noreferrer"
+            title="Abrir Quaderno para automatización fiscal"
+          >
+            <span class="affiliate-card__icon" aria-hidden="true">Q</span>
+            <span class="affiliate-card__body">
+              <strong>Quaderno</strong>
+              <span>Automatiza IVA, facturas y reportes fiscales en ventas online.</span>
+            </span>
+            <span class="affiliate-badge">Afiliado</span>
+          </a>
+
+          <!-- REEMPLAZAR: por tu enlace de afiliado de FacturaDirecta. -->
+          <a
+            class="affiliate-card"
+            href="https://www.facturadirecta.com/?utm_source=autocalc&utm_medium=affiliate&utm_campaign=footer"
+            target="_blank"
+            rel="nofollow sponsored noopener noreferrer"
+            title="Abrir FacturaDirecta para facturación online"
+          >
+            <span class="affiliate-card__icon" aria-hidden="true">F</span>
+            <span class="affiliate-card__body">
+              <strong>FacturaDirecta</strong>
+              <span>Facturas, presupuestos y gastos con una curva de entrada sencilla.</span>
+            </span>
+            <span class="affiliate-badge">Afiliado</span>
+          </a>
+
+          <!-- REEMPLAZAR: por tu enlace de afiliado o captación de gestoría. -->
+          <a
+            class="affiliate-card affiliate-card--cta"
+            href="#gestoria-recomendada?utm_source=autocalc&utm_medium=affiliate&utm_campaign=footer"
+            title="Placeholder para una gestoría recomendada"
+          >
+            <span class="affiliate-card__icon" aria-hidden="true">G</span>
+            <span class="affiliate-card__body">
+              <strong>¿Necesitas gestoría?</strong>
+              <span>Deriva consultas complejas a una asesoría fiscal colaboradora.</span>
+            </span>
+            <span class="affiliate-badge">Afiliado</span>
+          </a>
+        </div>
+
+        <p class="affiliate-disclosure">
+          Algunos enlaces son de afiliado. Si compras a través de ellos,
+          AutoCalc recibe una pequeña comisión sin coste adicional para ti.
+        </p>
+      </section>
+    </footer>
+    <aside id="cookie-banner" class="cookie-banner" hidden aria-label="Aviso de cookies">
+      <div class="cookie-banner__content">
+        <p>
+          Este sitio web utiliza cookies propias y de terceros para mejorar la
+          experiencia de navegación y analizar el tráfico.
+          <a href="#" class="cookie-banner__link">Más información</a>
+          <!-- REEMPLAZAR # por la URL de tu política de cookies completa -->
+        </p>
+        <button class="cookie-banner__accept" type="button">Aceptar</button>
+      </div>
+    </aside>
+    <script type="module" src="js/main.js"></script>
+    <script>
+      (function () {
+        var yearEl = document.getElementById('current-year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+      })();
+      (function () {
+        var banner = document.getElementById('cookie-banner');
+        if (!banner) return;
+        try {
+          if (localStorage.getItem('cookies_accepted') === 'true') return;
+          if (sessionStorage.getItem('cookies_accepted') === 'true') return;
+        } catch (e) { /* storage not available */ }
+        banner.hidden = false;
+        banner.querySelector('.cookie-banner__accept').addEventListener('click', function () {
+          banner.classList.add('cookie-banner--closing');
+          try {
+            localStorage.setItem('cookies_accepted', 'true');
+          } catch (e) {
+            try { sessionStorage.setItem('cookies_accepted', 'true'); } catch (e2) { /* ok */ }
+          }
+          banner.addEventListener('transitionend', function () { banner.hidden = true; }, { once: true });
+        });
+      })();
+    </script>
+  </body>
+</html>
