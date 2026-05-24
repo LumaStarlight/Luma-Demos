@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Bizum Pay Ready">
+  <rect width="64" height="64" rx="12" fill="#0072CE"/>
+  <path fill="#fff" d="M19 16h17c7 0 11 4 11 10 0 4-2 7-6 9 5 2 8 5 8 11 0 7-5 11-13 11H19V16Zm10 9v7h6c3 0 4-1 4-4s-2-3-5-3h-5Zm0 16v7h7c3 0 5-1 5-4s-2-3-5-3h-7Z"/>
+  <circle cx="48" cy="16" r="7" fill="#E6007E"/>
+</svg>
