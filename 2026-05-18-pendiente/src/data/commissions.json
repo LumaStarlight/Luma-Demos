@@ -1,7 +1,0 @@
-{
-  "debito": { "pct": 0.35, "min_fixed": 0.0 },
-  "credito": { "pct": 0.65, "min_fixed": 0.0 },
-  "bizum_pay": { "pct": 0.0, "min_fixed": 0.0 },
-  "monthly_tpv_rental": 15.0,
-  "notes": "Tasas medias orientativas para pequeño comercio en España (2026). Las comisiones reales dependen del contrato con cada banco/TAP. Durante el periodo promocional de Bizum Pay (2026-2027), la comisión para el comercio es 0%. Fuentes: CNMC, comparadores de TPV, tarifas públicas de entidades."
-}
