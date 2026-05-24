@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EstafaGuard — Verificador de estafas en España</title>
+  <meta name="description" content="Verifica SMS, emails, URLs y teléfonos sospechosos con una base actualizada de estafas activas en España y consejos para protegerte.">
+  <meta name="keywords" content="verificar estafa, phishing SMS, estafa hacienda, seguridad online">
+  <link rel="canonical" href="https://estafaguard.github.io/">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="theme-color" content="#1f5f8b">
+  <meta property="og:title" content="EstafaGuard — Verificador de estafas en España">
+  <meta property="og:description" content="Verifica SMS, emails, URLs y teléfonos sospechosos con una base actualizada de estafas activas en España y consejos para protegerte.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://estafaguard.github.io/">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EstafaGuard — Verificador de estafas en España">
+  <meta name="twitter:description" content="Verifica SMS, emails, URLs y teléfonos sospechosos con una base actualizada de estafas activas en España y consejos para protegerte.">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "EstafaGuard",
+          "description": "Verificador de estafas en España para revisar SMS, emails, URLs y teléfonos sospechosos.",
+          "applicationCategory": "SecurityApplication",
+          "operatingSystem": "Any",
+          "url": "https://estafaguard.github.io/"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cómo saber si un SMS de Hacienda es falso?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Desconfía si promete una devolución, pide datos bancarios o enlaza a un dominio que no sea la sede oficial de la Agencia Tributaria."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué hago si he pinchado en una URL sospechosa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No introduzcas datos, cierra la página, cambia las contraseñas afectadas y contacta con tu banco si compartiste información financiera."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Puedo verificar un número de teléfono?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. EstafaGuard normaliza números de teléfono y los compara con patrones reportados en la base de datos local."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué señales indican un email de phishing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Urgencia artificial, faltas de ortografía, remitentes raros, adjuntos inesperados y enlaces que no coinciden con el dominio oficial."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Dónde denuncio una estafa online en España?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Puedes recopilar pruebas y acudir a la Policía Nacional, Guardia Civil o INCIBE. Si hay cargos bancarios, avisa también a tu entidad."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-layout">
+      <a id="logo" class="brand" href="#search-section" aria-label="EstafaGuard inicio">
+        <span class="brand-mark" aria-hidden="true">EG</span>
+        <span class="brand-name">EstafaGuard</span>
+      </a>
+      <nav class="header-nav" aria-label="Navegación principal">
+        <a href="#search-section">Verificar</a>
+        <a href="#feed-section">Estafas recientes</a>
+        <a href="#report-section">Reportar</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Activar modo oscuro">
+          <span aria-hidden="true">🌙</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <div id="alert-banner-root" class="alert-banner-root" aria-live="polite"></div>
+
+  <aside class="container ad-container ad-container-top" aria-label="Publicidad">
+    <ins class="adsbygoogle ad-slot ad-slot-top"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="XXXXXXXXXX"
+      data-ad-label="Anuncio">Anuncio</ins>
+  </aside>
+
+  <main id="main" class="container page-main">
+    <section id="search-section" class="section-block" aria-labelledby="search-title">
+      <p class="section-kicker">Verificador rápido</p>
+      <h1 id="search-title">Comprueba si un mensaje, URL o teléfono parece una estafa</h1>
+      <p class="section-lede">
+        Pega el contenido sospechoso y compara señales con una base curada de fraudes activos en España.
+      </p>
+      <form class="card search-shell" action="#" method="get">
+        <label for="scam-input">Mensaje sospechoso</label>
+        <textarea id="scam-input" class="input" name="query" rows="5" placeholder="Pega aquí el SMS, email, número o URL sospechosa..."></textarea>
+        <button class="btn btn-primary" type="submit">Verificar</button>
+      </form>
+      <div id="search-results" class="card results-placeholder" aria-live="polite">
+        Los resultados aparecerán aquí cuando esté conectada la lógica de búsqueda.
+      </div>
+    </section>
+
+    <section id="feed-section" class="section-block" aria-labelledby="feed-title">
+      <p class="section-kicker">Timeline</p>
+      <h2 id="feed-title">Estafas recientes</h2>
+      <div class="feed-layout">
+        <div class="feed-main">
+          <nav id="feed-filters" class="feed-filters" aria-label="Filtrar estafas recientes"></nav>
+          <div id="feed-list" class="feed-list" aria-live="polite">
+            <div class="card feed-placeholder">Cargando estafas reportadas...</div>
+          </div>
+          <div id="feed-pagination" class="feed-pagination" aria-label="Paginación del timeline"></div>
+        </div>
+        <aside class="ad-container ad-container-sidebar" aria-label="Publicidad lateral">
+          <ins class="adsbygoogle ad-slot ad-slot-sidebar"
+            data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+            data-ad-slot="XXXXXXXXXX"
+            data-ad-label="Anuncio">Anuncio</ins>
+        </aside>
+      </div>
+    </section>
+
+    <section id="report-section" class="section-block" aria-labelledby="report-title">
+      <p class="section-kicker">Comunidad</p>
+      <h2 id="report-title">Reportar una estafa</h2>
+      <form id="report-form" class="card report-shell" action="#" method="post">
+        <label for="report-type">Tipo de estafa</label>
+        <select id="report-type" class="input" name="type" required>
+          <option value="">Selecciona una opción</option>
+          <option value="sms">SMS</option>
+          <option value="email">Email</option>
+          <option value="web">Web/URL</option>
+          <option value="phone">Teléfono</option>
+          <option value="whatsapp">WhatsApp</option>
+          <option value="other">Otro</option>
+        </select>
+
+        <label for="report-content">Contenido</label>
+        <textarea id="report-content" class="input" name="content" rows="5" minlength="20" required placeholder="Describe o pega el contenido sospechoso"></textarea>
+
+        <label for="report-phone">Teléfono del remitente</label>
+        <input id="report-phone" class="input" name="sender_phone" type="tel" pattern="^\\+?[0-9\\s().-]{7,20}$" placeholder="+34600123456">
+
+        <label for="report-email">Email del remitente</label>
+        <input id="report-email" class="input" name="sender_email" type="email" placeholder="avisos@ejemplo.com">
+
+        <label for="report-contact">Email de contacto</label>
+        <input id="report-contact" class="input" name="contact" type="email" placeholder="tu@email.com">
+
+        <p id="report-status" class="form-status" aria-live="assertive"></p>
+        <button id="report-submit" class="btn btn-primary" type="submit">Reportar</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="report-success-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="report-success-title">
+    <div class="modal-content report-modal-content">
+      <button class="modal-close" type="button" data-modal-close aria-label="Cerrar">&times;</button>
+      <div class="success-mark" aria-hidden="true">✓</div>
+      <h2 id="report-success-title">¡Gracias por reportar!</h2>
+      <p>Hemos copiado la información al portapapeles. Puedes crear un GitHub Issue con estos datos para que lo revisemos.</p>
+      <textarea id="report-json-fallback" class="input report-json-fallback" rows="7" readonly hidden></textarea>
+      <a class="btn btn-primary" href="https://github.com/estafaguard/estafaguard/issues/new" target="_blank" rel="noopener">Crear GitHub Issue</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <p>EstafaGuard ofrece señales orientativas, no sustituye una denuncia ni asesoramiento legal.</p>
+      <section class="affiliate-section" aria-label="Sección de afiliados">
+        <div class="section-heading-row">
+          <h2>Protégete</h2>
+          <p>Enlaces de afiliado — si compras a través de ellos, nos ayudas a mantener el servicio gratuito</p>
+        </div>
+        <div class="affiliate-grid">
+          <article class="card affiliate-card">
+            <span class="affiliate-icon" aria-hidden="true">VPN</span>
+            <h3>NordVPN</h3>
+            <p>Navega seguro y protege tus datos en redes publicas.</p>
+            <a class="btn btn-outline" href="https://nordvpn.com/es/" target="_blank" rel="sponsored nofollow" data-affiliate="true">Ver oferta</a>
+          </article>
+          <article class="card affiliate-card">
+            <span class="affiliate-icon" aria-hidden="true">PV</span>
+            <h3>ProtonVPN</h3>
+            <p>Alternativa gratuita con cifrado para conexiones sensibles.</p>
+            <a class="btn btn-outline" href="https://protonvpn.com/" target="_blank" rel="sponsored nofollow" data-affiliate="true">Protegerme</a>
+          </article>
+          <article class="card affiliate-card">
+            <span class="affiliate-icon" aria-hidden="true">TX</span>
+            <h3>TaxDown</h3>
+            <p>Tu declaracion de la Renta, facil y segura.</p>
+            <a class="btn btn-outline" href="https://taxdown.es/" target="_blank" rel="sponsored nofollow" data-affiliate="true">Revisar Renta</a>
+          </article>
+        </div>
+      </section>
+    </div>
+  </footer>
+
+  <script src="js/search.js"></script>
+  <script src="js/feed.js"></script>
+  <script src="js/alerts.js"></script>
+  <script src="js/report.js"></script>
+  <script src="js/monetization.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("sw.js").catch(function () {
+          // Offline support is optional; the app remains fully usable online.
+        });
+      });
+    }
+  </script>
+</body>
+</html>

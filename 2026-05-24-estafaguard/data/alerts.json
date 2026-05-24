@@ -1,0 +1,65 @@
+{
+  "version": "1.0.0",
+  "alerts": [
+    {
+      "id": "alert-renta-2026",
+      "title": "Campana de la Renta 2026",
+      "message": "Durante la campana de la Renta aumentan los SMS y emails que prometen devoluciones falsas. No introduzcas tarjeta ni claves desde enlaces recibidos: entra escribiendo la direccion oficial de la sede electronica.",
+      "severity": "high",
+      "active_from": "2026-04-01",
+      "active_until": "2026-06-30",
+      "icon": "!",
+      "tags": ["renta", "hacienda", "phishing", "sms"],
+      "cta_url": "https://sede.agenciatributaria.gob.es",
+      "cta_label": "Ir a la sede electronica"
+    },
+    {
+      "id": "alert-black-friday-navidad",
+      "title": "Compras de Black Friday y Navidad",
+      "message": "En temporada de compras aparecen tiendas falsas, avisos de paquetes retenidos y descuentos imposibles. Comprueba el dominio, el aviso legal y evita pagar por transferencia si no conoces al vendedor.",
+      "severity": "medium",
+      "active_from": "2026-11-15",
+      "active_until": "2027-01-15",
+      "icon": "!",
+      "tags": ["compras", "black friday", "navidad", "correos"],
+      "cta_url": "https://www.osi.es/es/compras-seguras-online",
+      "cta_label": "Guia de compra segura"
+    },
+    {
+      "id": "alert-verano-vacaciones",
+      "title": "Reservas de verano",
+      "message": "Antes de reservar alojamientos o viajes con precios muy bajos, verifica que el anuncio exista fuera del enlace recibido y no pagues fuera de plataformas con proteccion al comprador.",
+      "severity": "medium",
+      "active_from": "2026-06-15",
+      "active_until": "2026-09-15",
+      "icon": "!",
+      "tags": ["vacaciones", "alquiler", "viajes"],
+      "cta_url": "https://www.osi.es/es/actualidad/blog/estafas-alquiler-vacacional",
+      "cta_label": "Evitar fraudes de alquiler"
+    },
+    {
+      "id": "alert-san-valentin",
+      "title": "Estafas romanticas de San Valentin",
+      "message": "En febrero suben los perfiles falsos que piden dinero, regalos o inversiones despues de generar confianza. Desconfia de urgencias economicas y evita compartir documentacion personal.",
+      "severity": "low",
+      "active_from": "2026-02-01",
+      "active_until": "2026-02-15",
+      "icon": "!",
+      "tags": ["romance", "san valentin", "inversion"],
+      "cta_url": "https://www.osi.es/es/actualidad/blog/estafas-romanticas",
+      "cta_label": "Reconocer estafas romanticas"
+    },
+    {
+      "id": "alert-vuelta-al-cole",
+      "title": "Vuelta al cole y septiembre",
+      "message": "Septiembre concentra ofertas falsas de material escolar, becas inexistentes y avisos administrativos urgentes. Revisa remitentes, dominios y canales oficiales antes de pagar o enviar datos.",
+      "severity": "medium",
+      "active_from": "2026-09-01",
+      "active_until": "2026-10-01",
+      "icon": "!",
+      "tags": ["septiembre", "becas", "compras", "colegio"],
+      "cta_url": "https://www.osi.es/es/actualidad/blog/phishing",
+      "cta_label": "Aprender a detectar phishing"
+    }
+  ]
+}
