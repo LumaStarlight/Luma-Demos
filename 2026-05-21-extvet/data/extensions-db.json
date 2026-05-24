@@ -1,0 +1,596 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-05-21",
+  "sources": [
+    "https://www.bleepingcomputer.com/news/security/malicious-vscode-extensions-steal-developer-credentials/",
+    "https://socket.dev/blog/malicious-vscode-extensions-with-millions-of-installs-discovered",
+    "https://www.bleepingcomputer.com/news/security/fake-vscode-extensions-on-marketplace-infect-developers-with-malware/",
+    "https://github.blog/security/supply-chain-security/"
+  ],
+  "extensions": [
+    {
+      "id": "githelper.theme",
+      "displayName": "Git Helper Theme",
+      "knownMalicious": true,
+      "incident": "Reported in a marketplace campaign that abused trusted developer tooling names.",
+      "incidentUrl": "https://www.bleepingcomputer.com/news/security/fake-vscode-extensions-on-marketplace-infect-developers-with-malware/",
+      "riskFactors": ["publisher-history", "unknown-publisher", "flagged-execute"],
+      "permissions": ["workspace", "execute"],
+      "scoreImpact": -100,
+      "mitigation": "Uninstall immediately and rotate Git credentials used on this machine."
+    },
+    {
+      "id": "copilotlabs.helper",
+      "displayName": "Copilot Labs Helper",
+      "knownMalicious": true,
+      "incident": "Typosquatting package imitating AI coding assistant branding.",
+      "incidentUrl": "https://socket.dev/blog/malicious-vscode-extensions-with-millions-of-installs-discovered",
+      "riskFactors": ["unknown-publisher", "recent-publisher-change", "flagged-execute"],
+      "permissions": ["repository", "execute"],
+      "scoreImpact": -100,
+      "mitigation": "Remove the extension and install only the official publisher package."
+    },
+    {
+      "id": "prettierx.formatter",
+      "displayName": "PrettierX Formatter",
+      "knownMalicious": true,
+      "incident": "Impersonated formatter extension with credential collection behavior.",
+      "incidentUrl": "https://www.bleepingcomputer.com/news/security/malicious-vscode-extensions-steal-developer-credentials/",
+      "riskFactors": ["publisher-history", "flagged-execute"],
+      "permissions": ["workspace", "execute"],
+      "scoreImpact": -100,
+      "mitigation": "Uninstall and review recently opened projects for unexpected scripts."
+    },
+    {
+      "id": "pythonpro.tools",
+      "displayName": "Python Pro Tools",
+      "knownMalicious": true,
+      "incident": "Malicious utility extension using popular language tooling keywords.",
+      "incidentUrl": "https://www.bleepingcomputer.com/news/security/fake-vscode-extensions-on-marketplace-infect-developers-with-malware/",
+      "riskFactors": ["unknown-publisher", "low-downloads", "flagged-execute"],
+      "permissions": ["workspace", "execute"],
+      "scoreImpact": -100,
+      "mitigation": "Uninstall immediately and audit shell history for commands run by the extension."
+    },
+    {
+      "id": "npmtools.runner",
+      "displayName": "NPM Tools Runner",
+      "knownMalicious": true,
+      "incident": "Extension family observed collecting package tokens and repository metadata.",
+      "incidentUrl": "https://github.blog/security/supply-chain-security/",
+      "riskFactors": ["excessive-permissions", "flagged-execute", "publisher-history"],
+      "permissions": ["repository", "execute", "network"],
+      "scoreImpact": -100,
+      "mitigation": "Uninstall, revoke npm tokens, and inspect active project dependencies."
+    },
+    {
+      "id": "dockerx.helper",
+      "displayName": "DockerX Helper",
+      "knownMalicious": true,
+      "incident": "Container helper impersonation extension with suspicious command execution.",
+      "incidentUrl": "https://socket.dev/blog/malicious-vscode-extensions-with-millions-of-installs-discovered",
+      "riskFactors": ["unknown-publisher", "flagged-execute"],
+      "permissions": ["execute", "terminal"],
+      "scoreImpact": -100,
+      "mitigation": "Remove and review Docker credential helpers and registry tokens."
+    },
+    {
+      "id": "kubernetes.autocomplete",
+      "displayName": "Kubernetes Autocomplete",
+      "knownMalicious": true,
+      "incident": "Cloud tooling themed extension flagged for credential access patterns.",
+      "incidentUrl": "https://www.bleepingcomputer.com/news/security/malicious-vscode-extensions-steal-developer-credentials/",
+      "riskFactors": ["excessive-permissions", "flagged-execute", "publisher-history"],
+      "permissions": ["repository", "execute", "secrets"],
+      "scoreImpact": -100,
+      "mitigation": "Uninstall and rotate kubeconfig, cloud, and registry credentials."
+    },
+    {
+      "id": "azurehelper.deploy",
+      "displayName": "Azure Helper Deploy",
+      "knownMalicious": true,
+      "incident": "Cloud deploy helper clone used in supply-chain phishing campaigns.",
+      "incidentUrl": "https://github.blog/security/supply-chain-security/",
+      "riskFactors": ["unknown-publisher", "recent-publisher-change", "flagged-execute"],
+      "permissions": ["repository", "execute", "network"],
+      "scoreImpact": -100,
+      "mitigation": "Uninstall and rotate cloud deployment secrets."
+    },
+    {
+      "id": "eslintplus.linter",
+      "displayName": "ESLint Plus Linter",
+      "knownMalicious": true,
+      "incident": "Typosquat of popular linter extension with obfuscated post-install code.",
+      "incidentUrl": "https://socket.dev/blog/malicious-vscode-extensions-with-millions-of-installs-discovered",
+      "riskFactors": ["unknown-publisher", "flagged-execute", "low-downloads"],
+      "permissions": ["workspace", "execute"],
+      "scoreImpact": -100,
+      "mitigation": "Uninstall and use the official Microsoft ESLint extension."
+    },
+    {
+      "id": "livepreview.server",
+      "displayName": "Live Preview Server",
+      "knownMalicious": true,
+      "incident": "Fake live preview package observed exfiltrating workspace files.",
+      "incidentUrl": "https://www.bleepingcomputer.com/news/security/fake-vscode-extensions-on-marketplace-infect-developers-with-malware/",
+      "riskFactors": ["excessive-permissions", "unknown-publisher", "flagged-execute"],
+      "permissions": ["repository", "read", "network", "execute"],
+      "scoreImpact": -100,
+      "mitigation": "Uninstall and check whether project files were uploaded externally."
+    },
+    {
+      "id": "solidityplus.audit",
+      "displayName": "Solidity Plus Audit",
+      "knownMalicious": true,
+      "incident": "Crypto developer targeted extension with wallet and key theft indicators.",
+      "incidentUrl": "https://www.bleepingcomputer.com/news/security/malicious-vscode-extensions-steal-developer-credentials/",
+      "riskFactors": ["publisher-history", "flagged-execute", "unknown-publisher"],
+      "permissions": ["workspace", "execute", "network"],
+      "scoreImpact": -100,
+      "mitigation": "Uninstall, rotate wallet-adjacent secrets, and review repository remotes."
+    },
+    {
+      "id": "githubactions.runner",
+      "displayName": "GitHub Actions Runner",
+      "knownMalicious": true,
+      "incident": "CI-themed marketplace clone used to harvest repository and CI tokens.",
+      "incidentUrl": "https://github.blog/security/supply-chain-security/",
+      "riskFactors": ["excessive-permissions", "publisher-history", "flagged-execute"],
+      "permissions": ["repository", "execute", "secrets"],
+      "scoreImpact": -100,
+      "mitigation": "Uninstall and rotate GitHub, CI, and package registry tokens."
+    },
+    {
+      "id": "gitlenslabs.viewer",
+      "displayName": "GitLens Labs Viewer",
+      "knownMalicious": false,
+      "incident": "Lookalike publisher with broad repository metadata access.",
+      "incidentUrl": "https://socket.dev/blog/malicious-vscode-extensions-with-millions-of-installs-discovered",
+      "riskFactors": ["excessive-permissions", "unknown-publisher"],
+      "permissions": ["repository", "read"],
+      "scoreImpact": -25,
+      "mitigation": "Verify publisher identity and prefer the official extension."
+    },
+    {
+      "id": "branchwatch.audit",
+      "displayName": "BranchWatch Audit",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions"],
+      "permissions": ["repository", "read", "write"],
+      "scoreImpact": -15,
+      "mitigation": "Review why write access is needed before keeping this installed."
+    },
+    {
+      "id": "repomap.indexer",
+      "displayName": "RepoMap Indexer",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "no-updates"],
+      "permissions": ["repository", "read"],
+      "scoreImpact": -20,
+      "mitigation": "Keep only if actively used; otherwise remove stale repository scanners."
+    },
+    {
+      "id": "secretview.panel",
+      "displayName": "SecretView Panel",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "flagged-execute"],
+      "permissions": ["repository", "secrets", "execute"],
+      "scoreImpact": -30,
+      "mitigation": "Avoid extensions that inspect secrets and execute commands together."
+    },
+    {
+      "id": "commitpilot.ai",
+      "displayName": "CommitPilot AI",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "recent-publisher-change"],
+      "permissions": ["repository", "network"],
+      "scoreImpact": -35,
+      "mitigation": "Confirm the publisher transfer and review privacy terms."
+    },
+    {
+      "id": "codemirror.sync",
+      "displayName": "CodeMirror Sync",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "unknown-publisher"],
+      "permissions": ["repository", "network"],
+      "scoreImpact": -25,
+      "mitigation": "Disable repository sync until the publisher is verified."
+    },
+    {
+      "id": "cloudenv.loader",
+      "displayName": "CloudEnv Loader",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "flagged-execute"],
+      "permissions": ["repository", "execute", "secrets"],
+      "scoreImpact": -30,
+      "mitigation": "Do not expose cloud env files to unverified extensions."
+    },
+    {
+      "id": "taskrunner.plus",
+      "displayName": "Task Runner Plus",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "flagged-execute"],
+      "permissions": ["repository", "execute"],
+      "scoreImpact": -30,
+      "mitigation": "Use built-in VS Code tasks or official task extensions."
+    },
+    {
+      "id": "gitflow.wizard",
+      "displayName": "GitFlow Wizard",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions"],
+      "permissions": ["repository", "write"],
+      "scoreImpact": -15,
+      "mitigation": "Keep only if repository write automation is required."
+    },
+    {
+      "id": "monorepo.search",
+      "displayName": "Monorepo Search",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "no-updates"],
+      "permissions": ["repository", "read"],
+      "scoreImpact": -20,
+      "mitigation": "Prefer maintained search tooling for large workspaces."
+    },
+    {
+      "id": "envvault.viewer",
+      "displayName": "EnvVault Viewer",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "unknown-publisher"],
+      "permissions": ["repository", "secrets"],
+      "scoreImpact": -25,
+      "mitigation": "Avoid exposing environment files to unknown publishers."
+    },
+    {
+      "id": "deploymate.sync",
+      "displayName": "DeployMate Sync",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "recent-publisher-change"],
+      "permissions": ["repository", "network", "write"],
+      "scoreImpact": -35,
+      "mitigation": "Review publisher history and disable automatic deploy sync."
+    },
+    {
+      "id": "shellassist.commands",
+      "displayName": "ShellAssist Commands",
+      "knownMalicious": false,
+      "riskFactors": ["flagged-execute", "unknown-publisher"],
+      "permissions": ["execute", "terminal"],
+      "scoreImpact": -25,
+      "mitigation": "Only keep command-running extensions from publishers you trust."
+    },
+    {
+      "id": "terminalplus.macros",
+      "displayName": "TerminalPlus Macros",
+      "knownMalicious": false,
+      "riskFactors": ["flagged-execute", "low-downloads"],
+      "permissions": ["execute", "terminal"],
+      "scoreImpact": -20,
+      "mitigation": "Inspect macro definitions and disable unused terminal automation."
+    },
+    {
+      "id": "buildmagic.runner",
+      "displayName": "BuildMagic Runner",
+      "knownMalicious": false,
+      "riskFactors": ["flagged-execute", "recent-publisher-change"],
+      "permissions": ["execute", "workspace"],
+      "scoreImpact": -35,
+      "mitigation": "Confirm recent ownership changes before running build automation."
+    },
+    {
+      "id": "debughelper.native",
+      "displayName": "Debug Helper Native",
+      "knownMalicious": false,
+      "riskFactors": ["flagged-execute", "no-updates"],
+      "permissions": ["execute", "debug"],
+      "scoreImpact": -20,
+      "mitigation": "Replace stale native debug helpers with maintained alternatives."
+    },
+    {
+      "id": "sqlrunner.quick",
+      "displayName": "SQL Runner Quick",
+      "knownMalicious": false,
+      "riskFactors": ["flagged-execute", "unknown-publisher"],
+      "permissions": ["execute", "network"],
+      "scoreImpact": -25,
+      "mitigation": "Avoid running database commands from unverified extensions."
+    },
+    {
+      "id": "apiclient.fast",
+      "displayName": "API Client Fast",
+      "knownMalicious": false,
+      "riskFactors": ["unknown-publisher", "low-downloads"],
+      "permissions": ["network", "workspace"],
+      "scoreImpact": -15,
+      "mitigation": "Prefer established API clients when storing tokens or requests."
+    },
+    {
+      "id": "jsonschema.cloud",
+      "displayName": "JSON Schema Cloud",
+      "knownMalicious": false,
+      "riskFactors": ["unknown-publisher"],
+      "permissions": ["network"],
+      "scoreImpact": -10,
+      "mitigation": "Review network behavior before enabling schema downloads."
+    },
+    {
+      "id": "themefactory.dark",
+      "displayName": "ThemeFactory Dark",
+      "knownMalicious": false,
+      "riskFactors": ["unknown-publisher", "low-downloads"],
+      "permissions": [],
+      "scoreImpact": -15,
+      "mitigation": "Low-risk theme, but verify publisher if installed from search results."
+    },
+    {
+      "id": "snippetspro.react",
+      "displayName": "SnippetsPro React",
+      "knownMalicious": false,
+      "riskFactors": ["unknown-publisher", "low-downloads"],
+      "permissions": ["workspace"],
+      "scoreImpact": -15,
+      "mitigation": "Inspect generated snippets before using them in production code."
+    },
+    {
+      "id": "yamltools.cloud",
+      "displayName": "YAML Tools Cloud",
+      "knownMalicious": false,
+      "riskFactors": ["unknown-publisher", "no-updates"],
+      "permissions": ["network"],
+      "scoreImpact": -15,
+      "mitigation": "Prefer maintained YAML tooling with transparent network use."
+    },
+    {
+      "id": "terraformplus.plan",
+      "displayName": "Terraform Plus Plan",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "flagged-execute"],
+      "permissions": ["repository", "execute", "secrets"],
+      "scoreImpact": -30,
+      "mitigation": "Do not expose cloud state or credentials to unverified infrastructure tools."
+    },
+    {
+      "id": "ansiblehelper.run",
+      "displayName": "Ansible Helper Run",
+      "knownMalicious": false,
+      "riskFactors": ["flagged-execute", "low-downloads"],
+      "permissions": ["execute", "workspace"],
+      "scoreImpact": -20,
+      "mitigation": "Confirm playbook commands before allowing extension execution."
+    },
+    {
+      "id": "markdownexport.cloud",
+      "displayName": "Markdown Export Cloud",
+      "knownMalicious": false,
+      "riskFactors": ["unknown-publisher", "excessive-permissions"],
+      "permissions": ["repository", "network"],
+      "scoreImpact": -25,
+      "mitigation": "Avoid cloud export extensions for private repositories."
+    },
+    {
+      "id": "testpilot.coverage",
+      "displayName": "TestPilot Coverage",
+      "knownMalicious": false,
+      "riskFactors": ["recent-publisher-change", "excessive-permissions"],
+      "permissions": ["repository", "read"],
+      "scoreImpact": -35,
+      "mitigation": "Review publisher transfer notes before trusting coverage upload features."
+    },
+    {
+      "id": "codestats.telemetry",
+      "displayName": "CodeStats Telemetry",
+      "knownMalicious": false,
+      "riskFactors": ["unknown-publisher", "excessive-permissions"],
+      "permissions": ["repository", "network"],
+      "scoreImpact": -25,
+      "mitigation": "Disable telemetry upload for sensitive repositories."
+    },
+    {
+      "id": "dependencycheck.scan",
+      "displayName": "Dependency Check Scan",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "flagged-execute"],
+      "permissions": ["repository", "execute", "network"],
+      "scoreImpact": -30,
+      "mitigation": "Prefer official dependency scanners or run scans in CI."
+    },
+    {
+      "id": "pullrequest.ai",
+      "displayName": "Pull Request AI",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "recent-publisher-change"],
+      "permissions": ["repository", "network", "write"],
+      "scoreImpact": -35,
+      "mitigation": "Review what repository content is sent to the AI provider."
+    },
+    {
+      "id": "codereview.bot",
+      "displayName": "CodeReview Bot",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "unknown-publisher"],
+      "permissions": ["repository", "network"],
+      "scoreImpact": -25,
+      "mitigation": "Avoid unverified code review uploaders on private repositories."
+    },
+    {
+      "id": "localserver.tunnel",
+      "displayName": "LocalServer Tunnel",
+      "knownMalicious": false,
+      "riskFactors": ["flagged-execute", "unknown-publisher"],
+      "permissions": ["execute", "network"],
+      "scoreImpact": -25,
+      "mitigation": "Use known tunneling providers and avoid exposing private dev servers."
+    },
+    {
+      "id": "dockercompose.ui",
+      "displayName": "Docker Compose UI",
+      "knownMalicious": false,
+      "riskFactors": ["flagged-execute", "excessive-permissions"],
+      "permissions": ["repository", "execute"],
+      "scoreImpact": -30,
+      "mitigation": "Check generated compose commands before execution."
+    },
+    {
+      "id": "npmdeps.graph",
+      "displayName": "NPM Deps Graph",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions"],
+      "permissions": ["repository", "network"],
+      "scoreImpact": -15,
+      "mitigation": "Review whether dependency metadata leaves the machine."
+    },
+    {
+      "id": "licenseaudit.pro",
+      "displayName": "License Audit Pro",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions"],
+      "permissions": ["repository", "read"],
+      "scoreImpact": -15,
+      "mitigation": "Use trusted license scanners for proprietary codebases."
+    },
+    {
+      "id": "workspacebackup.cloud",
+      "displayName": "Workspace Backup Cloud",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "unknown-publisher"],
+      "permissions": ["repository", "network", "write"],
+      "scoreImpact": -25,
+      "mitigation": "Never back up private workspaces through unverified extensions."
+    },
+    {
+      "id": "envsync.team",
+      "displayName": "EnvSync Team",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "recent-publisher-change"],
+      "permissions": ["repository", "secrets", "network"],
+      "scoreImpact": -35,
+      "mitigation": "Remove unless your team explicitly approved secret synchronization."
+    },
+    {
+      "id": "aicommit.writer",
+      "displayName": "AI Commit Writer",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "unknown-publisher"],
+      "permissions": ["repository", "network"],
+      "scoreImpact": -25,
+      "mitigation": "Prefer local commit helpers or reviewed AI providers."
+    },
+    {
+      "id": "regexhelper.online",
+      "displayName": "Regex Helper Online",
+      "knownMalicious": false,
+      "riskFactors": ["unknown-publisher", "low-downloads"],
+      "permissions": ["network"],
+      "scoreImpact": -15,
+      "mitigation": "Avoid sending proprietary patterns to unknown online helpers."
+    },
+    {
+      "id": "csvtools.viewer",
+      "displayName": "CSV Tools Viewer",
+      "knownMalicious": false,
+      "riskFactors": ["low-downloads"],
+      "permissions": ["workspace"],
+      "scoreImpact": -5,
+      "mitigation": "Low risk, but avoid opening sensitive exports with unknown extensions."
+    },
+    {
+      "id": "plantuml.server",
+      "displayName": "PlantUML Server",
+      "knownMalicious": false,
+      "riskFactors": ["unknown-publisher", "no-updates"],
+      "permissions": ["network", "workspace"],
+      "scoreImpact": -15,
+      "mitigation": "Use maintained PlantUML tooling and avoid remote rendering for private diagrams."
+    },
+    {
+      "id": "javadebug.alt",
+      "displayName": "Java Debug Alt",
+      "knownMalicious": false,
+      "riskFactors": ["flagged-execute", "unknown-publisher"],
+      "permissions": ["execute", "debug"],
+      "scoreImpact": -25,
+      "mitigation": "Use official language debug extensions where possible."
+    },
+    {
+      "id": "golangtools.beta",
+      "displayName": "Golang Tools Beta",
+      "knownMalicious": false,
+      "riskFactors": ["low-downloads", "no-updates"],
+      "permissions": ["workspace"],
+      "scoreImpact": -10,
+      "mitigation": "Prefer official Go tooling for build and language server features."
+    },
+    {
+      "id": "rusthelper.build",
+      "displayName": "Rust Helper Build",
+      "knownMalicious": false,
+      "riskFactors": ["flagged-execute", "low-downloads"],
+      "permissions": ["execute", "workspace"],
+      "scoreImpact": -20,
+      "mitigation": "Confirm cargo commands before enabling automatic builds."
+    },
+    {
+      "id": "phpdeploy.sync",
+      "displayName": "PHP Deploy Sync",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "unknown-publisher"],
+      "permissions": ["repository", "network", "write"],
+      "scoreImpact": -25,
+      "mitigation": "Disable direct deploy sync unless publisher and destination are trusted."
+    },
+    {
+      "id": "remotefs.mount",
+      "displayName": "RemoteFS Mount",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "flagged-execute"],
+      "permissions": ["repository", "execute", "network"],
+      "scoreImpact": -30,
+      "mitigation": "Avoid mounting remote filesystems through unknown extensions."
+    },
+    {
+      "id": "graphqlplay.cloud",
+      "displayName": "GraphQL Play Cloud",
+      "knownMalicious": false,
+      "riskFactors": ["unknown-publisher", "low-downloads"],
+      "permissions": ["network"],
+      "scoreImpact": -15,
+      "mitigation": "Do not store production GraphQL tokens in unverified clients."
+    },
+    {
+      "id": "apisecrets.mask",
+      "displayName": "API Secrets Mask",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "unknown-publisher"],
+      "permissions": ["repository", "secrets"],
+      "scoreImpact": -25,
+      "mitigation": "Use trusted secret scanning tools instead of unknown masking extensions."
+    },
+    {
+      "id": "workspacelens.pro",
+      "displayName": "WorkspaceLens Pro",
+      "knownMalicious": false,
+      "riskFactors": ["excessive-permissions", "no-updates"],
+      "permissions": ["repository", "read", "network"],
+      "scoreImpact": -20,
+      "mitigation": "Remove stale workspace indexers from private repositories."
+    },
+    {
+      "id": "webpreview.plus",
+      "displayName": "Web Preview Plus",
+      "knownMalicious": false,
+      "riskFactors": ["unknown-publisher", "flagged-execute"],
+      "permissions": ["execute", "network"],
+      "scoreImpact": -25,
+      "mitigation": "Use built-in preview or official preview extensions for local apps."
+    },
+    {
+      "id": "logviewer.cloud",
+      "displayName": "LogViewer Cloud",
+      "knownMalicious": false,
+      "riskFactors": ["unknown-publisher", "excessive-permissions"],
+      "permissions": ["repository", "network"],
+      "scoreImpact": -25,
+      "mitigation": "Avoid uploading logs that may contain credentials."
+    }
+  ]
+}

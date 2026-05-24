@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Analiza la seguridad de tus extensiones de VS Code. Detecta extensiones maliciosas, permisos excesivos y riesgos de seguridad.">
+  <meta name="keywords" content="VS Code, security, extensions, malware, analyzer">
+  <meta property="og:title" content="ExtVet — Analizador de Seguridad de Extensiones VS Code">
+  <meta property="og:description" content="Analiza la seguridad de tus extensiones de VS Code al instante">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/og-image.png">
+  <meta property="og:url" content="https://QorexES.github.io/Luma-MVP/2026-05-21-pendiente/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ExtVet — Analizador de Seguridad">
+  <meta name="twitter:description" content="Analiza la seguridad de tus extensiones de VS Code">
+  <meta name="theme-color" content="#111827">
+  <meta name="extvet:ad-client" content="">
+  <meta name="extvet:ad-banner-slot" content="">
+  <meta name="extvet:ad-sidebar-slot" content="">
+  <meta name="extvet:stripe-url" content="">
+  <title>ExtVet — VS Code Extension Security Analyzer</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="shell">
+      <div class="header-layout">
+        <div>
+          <p class="eyebrow">ExtVet</p>
+          <h1>VS Code Extension Security Analyzer</h1>
+          <p class="tagline">Analiza tus extensiones de VS Code y detecta riesgos antes de que lleguen al repositorio.</p>
+        </div>
+        <button class="dark-mode-toggle" type="button" id="dark-mode-toggle" aria-label="Cambiar a modo oscuro" aria-pressed="false">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell ad-shell">
+    <div class="ad-slot ad-banner" id="ad-banner" data-ad-client="" data-ad-slot="" role="complementary" aria-label="Publicidad">
+      Publicidad — Configura tu ID de AdSense
+    </div>
+  </div>
+
+  <main class="shell" id="main-content">
+    <section class="intro" aria-labelledby="intro-title">
+      <h2 id="intro-title">Pega tu lista de extensiones</h2>
+      <p>Ejecuta <code>code --list-extensions</code> y usa ExtVet para revisar extensiones maliciosas conocidas, permisos excesivos y señales de riesgo.</p>
+    </section>
+
+    <section class="card input-panel" aria-labelledby="input-title">
+      <div class="input-heading">
+        <div>
+          <p class="eyebrow">Analizador</p>
+          <h2 id="input-title">Lista de extensiones</h2>
+        </div>
+        <button class="btn" type="button" id="sample-input">Usar ejemplo</button>
+      </div>
+      <label class="input-label" for="extension-input">Pega una extensión por línea</label>
+      <textarea class="textarea" id="extension-input" rows="9" spellcheck="false" aria-describedby="input-help" placeholder="ms-python.python&#10;github.copilot&#10;publisher.extension"></textarea>
+      <p class="input-help" id="input-help">Una extensión por línea, en formato publisher.extension.</p>
+      <div class="input-actions">
+        <button class="btn btn-primary" type="button" id="analyze-button">Analizar extensiones</button>
+        <button class="btn" type="button" id="clear-button">Limpiar</button>
+        <span id="app-status" class="app-status" role="status" aria-live="polite"></span>
+      </div>
+      <div id="parser-preview"></div>
+    </section>
+
+    <section class="results-shell" id="results" aria-labelledby="results-title">
+      <div class="results-heading">
+        <div>
+          <p class="eyebrow">Resultados</p>
+          <h2 id="results-title">Estado de seguridad</h2>
+        </div>
+        <div class="premium-actions" id="premium-actions" hidden>
+          <button class="btn btn-premium" type="button" id="premium-monitor">📡 Monitorización continua 🔒</button>
+          <button class="btn btn-premium" type="button" id="premium-export">📄 Exportar PDF 🔒</button>
+        </div>
+      </div>
+
+      <div id="summary-card" class="results-empty card">
+        Analiza tus extensiones para ver resultados aquí.
+      </div>
+
+      <div class="results-layout">
+        <div class="results-main">
+          <div id="badge-tools"></div>
+          <div id="extensions-table"></div>
+          <div id="recommendations"></div>
+          <div id="mitigation"></div>
+        </div>
+        <aside class="results-sidebar" aria-label="Publicidad y herramientas recomendadas">
+          <div class="ad-slot ad-sidebar" id="ad-sidebar" data-ad-client="" data-ad-slot="">
+            Publicidad — Configura tu ID de AdSense
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>&copy; <span id="current-year"></span> ExtVet. Static security tooling for developers.</p>
+      <p class="footer-affiliates">
+        Formación recomendada:
+        <a class="affiliate-link" href="https://www.oreilly.com/search/?query=application%20security" target="_blank" rel="sponsored nofollow noopener">O'Reilly <span aria-label="enlace patrocinado">🔗</span></a>
+        <a class="affiliate-link" href="https://www.pluralsight.com/search?q=security" target="_blank" rel="sponsored nofollow noopener">Pluralsight <span aria-label="enlace patrocinado">🔗</span></a>
+      </p>
+      <details class="monetization-config">
+        <summary>Configurar monetización</summary>
+        <p>Rellena las metas <code>extvet:ad-client</code>, <code>extvet:ad-banner-slot</code> y <code>extvet:ad-sidebar-slot</code>. Cambia las URLs patrocinadas por tus enlaces de afiliado.</p>
+      </details>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/parser.js"></script>
+  <script src="js/analyzer.js"></script>
+  <script src="js/scorer.js"></script>
+  <script src="js/badge.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/monetization.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Premium gate modal -->
+  <div class="modal-overlay" id="premium-modal" role="dialog" aria-modal="true" aria-labelledby="premium-modal-title" hidden>
+    <div class="modal">
+      <button class="modal-close" type="button" id="premium-modal-close" aria-label="Cerrar">&times;</button>
+      <div class="modal-body">
+        <h2 id="premium-modal-title">🔒 Funcionalidad Premium</h2>
+        <p class="modal-text">Esta funcionalidad estará disponible próximamente. Déjanos tu email para acceso anticipado.</p>
+        <form id="premium-form" novalidate>
+          <div class="modal-field">
+            <label for="premium-email">Email</label>
+            <input class="input" type="email" id="premium-email" placeholder="tu@email.com" autocomplete="email" required>
+            <span class="modal-error" id="premium-email-error" role="alert"></span>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-primary" type="submit">💌 Notificarme cuando esté disponible</button>
+            <a class="btn btn-stripe" id="premium-stripe-btn" href="#" target="_blank" rel="noopener">🔄 Pre-registro ($4.99/mes)</a>
+          </div>
+        </form>
+        <p class="modal-confirmation" id="premium-confirmation" hidden></p>
+        <p class="modal-registered" id="premium-registered" hidden>Ya estás registrado 🎉 — Te avisaremos pronto.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

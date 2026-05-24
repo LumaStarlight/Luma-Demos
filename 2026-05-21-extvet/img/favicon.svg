@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">ExtVet favicon</title>
+  <desc id="desc">Shield with a stylized V for VS Code extension security.</desc>
+  <rect width="64" height="64" rx="14" fill="#111827"/>
+  <path d="M32 8 51 16v14c0 13.5-7.8 22.4-19 27.8C20.8 52.4 13 43.5 13 30V16l19-8Z" fill="#14b8a6"/>
+  <path d="m22 24 8.1 19.2c.7 1.6 3 1.6 3.7 0L42 24h-6.1L32 34.5 28.1 24H22Z" fill="#f8fafc"/>
+  <path d="M19 17.8 32 12l13 5.8V30c0 10.3-5.2 17.4-13 22-7.8-4.6-13-11.7-13-22V17.8Z" fill="none" stroke="#f8fafc" stroke-opacity=".34" stroke-width="2"/>
+</svg>
